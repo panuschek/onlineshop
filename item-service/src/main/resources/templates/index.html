@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>ItemService</title>
+</head>
+<body>
+  <h1>Hello from Thymeleaf</h1>
+
+  <form action="#" th:action="@{/web/items}" method="post" th:object="${item}">
+    <input type="submit" th:value="Speichern">
+    <input th:field="*{name}" placeholder="Name">
+    <input th:field="*{description}" placeholder="Beschreibung">
+    <input th:field="*{price}" placeholder="Preis">
+  </form>
+
+  <table>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Beschreibung</th>
+    <th>Preis</th>
+
+    <tr th:each="item : ${items}">
+      <td th:text="${item.itemId}"></td>
+      <td th:text="${item.name}"></td>
+      <td th:text="${item.description}"></td>
+      <td th:text="${item.price}"></td>
+    </tr>
+  </table>
+</body>
+</html>

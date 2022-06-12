@@ -18,7 +18,7 @@ public class PersistentItemService implements ItemService {
     @PostConstruct
     public void init() {
         for(var i = 1; i < 11; i++) {
-            itemRepository.save(new Item(i, "Testitem 1", "Beschreibung", 12.5f));
+            itemRepository.save(new Item(i, "Testitem " + i, "Beschreibung", 12.5f));
         }
     }
 
